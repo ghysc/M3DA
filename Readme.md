@@ -19,3 +19,10 @@ Finally, I had to correctly compute normals in order to have persuasive lighting
 _[Warning] In order to make it work on Windows, please comment "LIBS+=-lglew32s" in ther user.pro file and replace uint by unsigned int in "VertexArray.h"._
 
 In this exercise, I have done evenly distributed B-splines as well as specifically spread curves like Bézier before moving in to Nurbs and surface Nurbs.
+
+--------------------------------------------
+## _TP03 - Subdivision_
+
+_[Warning] In order to make it work on Windows, please replace uint by unsigned int in "VertexArray.h"._
+
+In this exercise, I have seen Chaikin approximation, Dyn-Levin interpolation, and Catmull-Clark subdivision.
