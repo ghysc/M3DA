@@ -23,7 +23,7 @@ _[Warning] In order to make it work on Windows, please comment "LIBS+=-lglew32s"
 In this exercise, I have seen B-splines, which are functions represented by several polynomials connected to each other so we have a continuous curve. This allows us to have local control. As you can see on the GIF below, if we move one control point, it will not impact the entire curve.
 ![cylinder](/media/splines1.gif)
 
-Another feature of B-splines is basis functions. Their numbers depends on the number of control points and on the curve's degree. They allow us to control the weight of the curve. As you can see on the GIF below, if basis functions are either 0 or 1, we have a Bezier curve !
+Another feature of B-splines is basis functions (you can see them in the upper left of the GIFs). They depend on the number of control points and on the curve's degree. They allow us to control the weight of the curve. As you can see on the GIF below, if basis functions are either 0 or 1, we have a Bezier curve !
 ![cylinder](/media/splines2.gif)
 
 Finally, I have seen Nurbs.
@@ -37,5 +37,5 @@ _[Warning] In order to make it work on Windows, please replace uint by unsigned 
 In this exercise, I have seen subdivision techniques such as Chaikin approximation (not verifying control points), Dyn-Levin interpolation (verifying control points) :  
 ![cylinder](/media/subdivision1.gif)
 
-But also Catmull-Clark subdivision, which create new faces by computing new points (middle of a face, middle of an edge, weighted old points) :  
+But also Catmull-Clark subdivision, which create new faces by computing new points (middle of a face in blue, middle of an edge in green, weighted old points in red). This subdivision creates as many faces as each points' edges :  
 ![cylinder](/media/subdivision2.gif)
