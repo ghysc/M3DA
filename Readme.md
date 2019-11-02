@@ -9,7 +9,7 @@ Lille University, France - 2019
 
 _[Warning] In order to make it work on Windows, please comment "LIBS+=-lglew32s" in ther user.pro file and replace uint by unsigned int in "VertexArray.h"._
 
-In this exercise, I have done generalized cylinders which allow us to build a surface from a section "swiping"/following a path. This is known as 3D Sweep Objects.  
+In this exercise, I have done generalized cylinders which allow us to build an object from a section (here, the red circle) "swiping"/following a path (here, the blue line). This is known as 3D Sweep Objects.  
 First, I took care of orientations and tangent path lines.  
 Then, I added spline-shaped paths, so we have a more natural curve.  
 Finally, I correctly computed normals in order to have persuasive lighting.  
