@@ -18,6 +18,8 @@
 using namespace p3d;
 using namespace std;
 
+int s = 0;
+
 GLApplication::~GLApplication() {
 }
 
@@ -88,15 +90,15 @@ void GLApplication::initialize() {
 
   /** init the CSG (tree, transformation, color) **/
 
-  _tree={4,2,4,2,0,-1};
+  _tree={7,4, 5,4, 4,5, 6,5, 2,6, 1,6, 0,-1};
 
 
 
-  _leaf={Matrix4::fromTranslation(0,0,0),Matrix4::fromTranslation(0,0,0)};
+  _leaf={Matrix4::fromTranslation(0,0,-0.5),Matrix4::fromTranslation(0,1,0.1),Matrix4::fromTranslation(0,-3,2),Matrix4::fromTranslation(3,0,3)};
 
 
 
-  _color={Vector4(1,0,0,1),Vector4(1,1,0,1)};
+  _color={Vector4(1,0,0,1),Vector4(1,1,0,1),Vector4(1,1,1,1),Vector4(1,0,1,1)};
 
   /** ** **/
 }
@@ -111,6 +113,8 @@ void GLApplication::update() {
     if (_tree[2*i]>=4) _nbLeaf++;
   }
 
+  _leaf[2].translate(cos(s),sin(s),0);
+  s+=1;
 
 }
 
