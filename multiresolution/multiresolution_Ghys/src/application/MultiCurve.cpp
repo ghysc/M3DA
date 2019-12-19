@@ -123,15 +123,14 @@ void MultiCurve::synthesisStep() {
    * use _currentCurve (contains the points of the current level) and _detail[level] (the detail coefficients).
    */
   finer.resize(n*2); // finer will contain next level
-  for(int i=0; i<finer.size(); i+=2) {
-      //Vector3 p0 = 3 * (_currentCurve[i] + _detail[level][i]) / 4 + (_currentCurve[(i+1)%n] - _detail[level][(i+1)%n]) / 4;
-      Vector3 pn0 = (3*_currentCurve[i] + _currentCurve[i+1]) / 4;
-      Vector3 qn0 = (3*_detail[level][i] - _detail[level][i+1]) / 4;
-      finer.push_back(pn0 + qn0);
-      //Vector3 p1 = (_currentCurve[i] + _detail[level][i]) / 4 + 3 * (_currentCurve[(i+1)%n] - _detail[level][(i+1)%n]) / 4;
-      Vector3 pn1 = (_currentCurve[i] + 3*_currentCurve[i+1]) / 4;
-      Vector3 qn1 = (_detail[level][i] - 3*_detail[level][i+1]) / 4;
-      finer.push_back(pn1 + qn1);
+  for(int i=0; i<n; i++) {
+      int j = (i-1)<0?(n-1):(i-1);
+      Vector3 pn0 = (3*_currentCurve[j] + _currentCurve[i]) / 4;
+      Vector3 qn0 = (3*_detail[level][j] - _detail[level][i]) / 4;
+      finer[2*i] = pn0 + qn0;
+      Vector3 pn1 = (_currentCurve[j] + 3*_currentCurve[i]) / 4;
+      Vector3 qn1 = (_detail[level][j] - 3*_detail[level][i]) / 4;
+      finer[2*i+1] = pn1 + qn1;
   }
   /* end TODO
    */
